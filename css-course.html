@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Course - Web Development</title>
+    <link rel="stylesheet" href="cssp.css">
+    <script src="jsp.js"></script>
+</head>
+<body>
+    <header class="header course-header">
+        <nav class="nav-bar">
+            <div class="logo">WebDev Pro</div>
+            <div class="nav-links">
+                <a href="htmlp.html">Home</a>
+                <a href="html-course.html">HTML</a>
+                <a href="css-course.html">CSS</a>
+                <a href="js-course.html">JavaScript</a>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <h1>CSS Course</h1>
+            <p>Master the art of web styling</p>
+        </div>
+    </header>
+
+    <main class="course-content">
+        <section class="lesson-container">
+            <!-- CSS Fundamentals -->
+            <div class="lesson-item">
+                <h3>1. CSS Fundamentals <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Introduction to CSS</h4>
+                        <p>CSS (Cascading Style Sheets) is used to control the visual presentation of HTML elements.</p>
+                        
+                        <h4>Selectors:</h4>
+                        <ul>
+                            <li>Element selectors (p, div, h1)</li>
+                            <li>Class selectors (.classname)</li>
+                            <li>ID selectors (#idname)</li>
+                            <li>Attribute selectors [type="text"]</li>
+                            <li>Combinators (space, >, +, ~)</li>
+                        </ul>
+
+                        <h4>CSS Rules:</h4>
+                        <ul>
+                            <li>Declarations (property: value)</li>
+                            <li>Cascading and specificity</li>
+                            <li>Inheritance</li>
+                            <li>Important declaration (!important)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Style a Blog Post</h4>
+                        <p>Create styles for a blog post using different types of selectors.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+/* Element Selectors */
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-family: 'Georgia', serif;
+}
+
+/* Class Selectors */
+.post-meta {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* ID Selector */
+#main-title {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* Attribute Selector */
+a[target="_blank"] {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+/* Combinator */
+article > p {
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box Model and Layout -->
+            <div class="lesson-item">
+                <h3>2. Box Model and Layout <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Box Model Components:</h4>
+                        <ul>
+                            <li>Content - width and height</li>
+                            <li>Padding - inner spacing</li>
+                            <li>Border - element boundary</li>
+                            <li>Margin - outer spacing</li>
+                            <li>Box-sizing property</li>
+                        </ul>
+
+                        <h4>Layout Properties:</h4>
+                        <ul>
+                            <li>Display (block, inline, inline-block)</li>
+                            <li>Position (static, relative, absolute, fixed)</li>
+                            <li>Float and clear</li>
+                            <li>Z-index and stacking context</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Card Layout</h4>
+                        <p>Design a product card with proper spacing and positioning.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+.product-card {
+    /* Box Model */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin: 15px;
+    box-sizing: border-box;
+
+    /* Layout */
+    position: relative;
+    display: inline-block;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.product-info {
+    margin-top: 15px;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flexbox and Grid -->
+            <div class="lesson-item">
+                <h3>3. Flexbox and Grid <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Flexbox Properties:</h4>
+                        <ul>
+                            <li>Container properties (display: flex, flex-direction, justify-content, align-items)</li>
+                            <li>Item properties (flex-grow, flex-shrink, flex-basis)</li>
+                            <li>Order and alignment</li>
+                            <li>Flex wrapping</li>
+                        </ul>
+
+                        <h4>Grid Properties:</h4>
+                        <ul>
+                            <li>Grid container (display: grid, grid-template-columns/rows)</li>
+                            <li>Grid areas and template areas</li>
+                            <li>Gap and alignment</li>
+                            <li>Auto-fit and minmax</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Responsive Layout</h4>
+                        <p>Build a responsive page layout using both Flexbox and Grid.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+.page-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Design -->
+            <div class="lesson-item">
+                <h3>4. Responsive Design <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Responsive Concepts:</h4>
+                        <ul>
+                            <li>Media queries</li>
+                            <li>Viewport meta tag</li>
+                            <li>Relative units (em, rem, vh, vw)</li>
+                            <li>Mobile-first approach</li>
+                        </ul>
+
+                        <h4>Responsive Techniques:</h4>
+                        <ul>
+                            <li>Fluid layouts</li>
+                            <li>Flexible images</li>
+                            <li>Breakpoints</li>
+                            <li>Container queries</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Responsive Navigation</h4>
+                        <p>Build a navigation menu that adapts to different screen sizes.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+/* Base styles */
+.nav-container {
+    padding: 1rem;
+    background: #2c3e50;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #2c3e50;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced CSS -->
+            <div class="lesson-item">
+                <h3>5. Advanced CSS <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Animations and Transitions:</h4>
+                        <ul>
+                            <li>Transitions properties</li>
+                            <li>Keyframe animations</li>
+                            <li>Transform properties</li>
+                            <li>Animation timing functions</li>
+                        </ul>
+
+                        <h4>Modern CSS Features:</h4>
+                        <ul>
+                            <li>Custom properties (variables)</li>
+                            <li>Pseudo-elements and pseudo-classes</li>
+                            <li>CSS functions (calc, clamp)</li>
+                            <li>CSS custom properties</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create Animated Components</h4>
+                        <p>Build interactive components with animations and transitions.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+:root {
+    --primary-color: #3498db;
+    --hover-color: #2980b9;
+    --transition-speed: 0.3s;
+}
+
+.button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: all var(--transition-speed) ease;
+}
+
+.button:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: slideIn 0.5s ease-out;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@webdevpro.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebDev Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

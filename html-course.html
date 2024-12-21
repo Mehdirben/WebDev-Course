@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Course - Web Development</title>
+    <link rel="stylesheet" href="cssp.css">
+    <script src="jsp.js"></script>
+</head>
+<body>
+    <header class="header course-header">
+        <nav class="nav-bar">
+            <div class="logo">WebDev Pro</div>
+            <div class="nav-links">
+                <a href="htmlp.html">Home</a>
+                <a href="html-course.html">HTML</a>
+                <a href="css-course.html">CSS</a>
+                <a href="js-course.html">JavaScript</a>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <h1>HTML Course</h1>
+            <p>Master the structure of web pages</p>
+        </div>
+    </header>
+
+    <main class="course-content">
+        <section class="lesson-container">
+            <!-- HTML Fundamentals -->
+            <div class="lesson-item">
+                <h3>1. HTML Fundamentals <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Introduction to HTML</h4>
+                        <p>HTML (HyperText Markup Language) is the backbone of web pages, providing structure and content.</p>
+                        
+                        <h4>Document Structure:</h4>
+                        <ul>
+                            <li>DOCTYPE declaration</li>
+                            <li>HTML element</li>
+                            <li>Head section</li>
+                            <li>Body section</li>
+                        </ul>
+
+                        <h4>Basic Syntax:</h4>
+                        <ul>
+                            <li>Opening and closing tags: &lt;tag&gt;&lt;/tag&gt;</li>
+                            <li>Self-closing tags: &lt;tag /&gt;</li>
+                            <li>Elements with attributes: &lt;tag attribute="value"&gt;</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create Your First HTML Page</h4>
+                        <p>Create a basic HTML page with a title, heading, and paragraph.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page. I'm learning web development!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Elements -->
+            <div class="lesson-item">
+                <h3>2. Text Elements and Lists <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Text Elements:</h4>
+                        <ul>
+                            <li>Headings (h1-h6)</li>
+                            <li>Paragraphs (p)</li>
+                            <li>Text formatting (strong, em, mark, etc.)</li>
+                            <li>Line breaks and horizontal rules</li>
+                        </ul>
+
+                        <h4>Lists:</h4>
+                        <ul>
+                            <li>Unordered lists (ul)</li>
+                            <li>Ordered lists (ol)</li>
+                            <li>Definition lists (dl)</li>
+                            <li>Nested lists</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Recipe Page</h4>
+                        <p>Create a recipe page using various text elements and lists.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+&lt;h1&gt;Chocolate Chip Cookies&lt;/h1&gt;
+&lt;h2&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;2 cups flour&lt;/li&gt;
+    &lt;li&gt;1 cup sugar&lt;/li&gt;
+    &lt;li&gt;1 cup chocolate chips&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Instructions&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Preheat oven to &lt;strong&gt;350°F&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;Mix &lt;em&gt;dry&lt;/em&gt; ingredients&lt;/li&gt;
+    &lt;li&gt;Add &lt;em&gt;wet&lt;/em&gt; ingredients&lt;/li&gt;
+    &lt;li&gt;Bake for 10-12 minutes&lt;/li&gt;
+&lt;/ol&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links and Images -->
+            <div class="lesson-item">
+                <h3>3. Links and Images <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Links (Anchor Tags):</h4>
+                        <ul>
+                            <li>Basic link syntax</li>
+                            <li>Relative vs absolute URLs</li>
+                            <li>Link to sections within page</li>
+                            <li>Link attributes (target, rel)</li>
+                        </ul>
+
+                        <h4>Images:</h4>
+                        <ul>
+                            <li>Image tag and attributes</li>
+                            <li>Alt text for accessibility</li>
+                            <li>Image formats (JPG, PNG, SVG)</li>
+                            <li>Responsive images</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Photo Gallery</h4>
+                        <p>Create a simple photo gallery with linked images.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+&lt;h1&gt;My Photo Gallery&lt;/h1&gt;
+
+&lt;div class="gallery"&gt;
+    &lt;a href="large-photo1.jpg" target="_blank"&gt;
+        &lt;img src="thumbnail1.jpg" alt="Mountain landscape" width="300"&gt;
+    &lt;/a&gt;
+    
+    &lt;a href="large-photo2.jpg" target="_blank"&gt;
+        &lt;img src="thumbnail2.jpg" alt="Ocean sunset" width="300"&gt;
+    &lt;/a&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="photo3.jpg" alt="Forest path" width="300"&gt;
+        &lt;figcaption&gt;A peaceful forest path&lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tables and Forms -->
+            <div class="lesson-item">
+                <h3>4. Tables and Forms <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Tables:</h4>
+                        <ul>
+                            <li>Basic table structure (table, tr, td)</li>
+                            <li>Table headers (th)</li>
+                            <li>Spanning columns and rows</li>
+                            <li>Table sections (thead, tbody, tfoot)</li>
+                        </ul>
+
+                        <h4>Forms:</h4>
+                        <ul>
+                            <li>Form elements and attributes</li>
+                            <li>Input types</li>
+                            <li>Labels and fieldsets</li>
+                            <li>Form validation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Registration Form</h4>
+                        <p>Create a registration form with various input types and validation.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+&lt;form action="/register" method="post"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Personal Information&lt;/legend&gt;
+        
+        &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" required&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" 
+               minlength="8" required&gt;
+        
+        &lt;label for="birthdate"&gt;Birth Date:&lt;/label&gt;
+        &lt;input type="date" id="birthdate" name="birthdate"&gt;
+        
+        &lt;fieldset&gt;
+            &lt;legend&gt;Interests&lt;/legend&gt;
+            &lt;input type="checkbox" id="coding" name="interests[]"&gt;
+            &lt;label for="coding"&gt;Coding&lt;/label&gt;
+            
+            &lt;input type="checkbox" id="design" name="interests[]"&gt;
+            &lt;label for="design"&gt;Design&lt;/label&gt;
+        &lt;/fieldset&gt;
+        
+        &lt;button type="submit"&gt;Register&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semantic HTML -->
+            <div class="lesson-item">
+                <h3>5. Semantic HTML <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Semantic Elements:</h4>
+                        <ul>
+                            <li>Header and footer</li>
+                            <li>Navigation</li>
+                            <li>Main and article</li>
+                            <li>Section and aside</li>
+                            <li>Figure and figcaption</li>
+                        </ul>
+
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>Better accessibility</li>
+                            <li>Improved SEO</li>
+                            <li>Clearer code structure</li>
+                            <li>Easier maintenance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create a Blog Layout</h4>
+                        <p>Create a blog layout using semantic HTML elements.</p>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;My Tech Blog&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Articles&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;header&gt;
+            &lt;h2&gt;Getting Started with HTML5&lt;/h2&gt;
+            &lt;time datetime="2024-01-19"&gt;January 19, 2024&lt;/time&gt;
+        &lt;/header&gt;
+        
+        &lt;section&gt;
+            &lt;p&gt;Article content goes here...&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;footer&gt;
+            &lt;p&gt;Author: Jane Doe&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Recent Posts&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;CSS Tips&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;JavaScript Basics&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2024 My Tech Blog&lt;/p&gt;
+&lt;/footer&gt;
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@webdevpro.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebDev Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
