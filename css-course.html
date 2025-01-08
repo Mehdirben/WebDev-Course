@@ -20,79 +20,76 @@
         </nav>
         <div class="hero-section">
             <h1>CSS Course</h1>
-            <p>Master the art of web styling</p>
+            <p>Master the styling of web pages</p>
         </div>
     </header>
 
     <main class="course-content">
         <section class="lesson-container">
+            <!-- Course PDF -->
+            <div class="lesson-item">
+                <h3>Full Course PDF <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="pdf-section">
+                        <div class="pdf-container">
+                            <iframe src="css_course.pdf" class="pdf-viewer" id="pdfViewer"></iframe>
+                            <div class="pdf-controls">
+                                <button onclick="toggleFullscreen()" class="fullscreen-btn">Full Screen</button>
+                                <a href="css_course.pdf" download class="download-btn">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- CSS Fundamentals -->
             <div class="lesson-item">
                 <h3>1. CSS Fundamentals <button onclick="toggleLesson(this)">Show</button></h3>
                 <div class="lesson-content">
                     <div class="theory">
                         <h4>Introduction to CSS</h4>
-                        <p>CSS (Cascading Style Sheets) is used to control the visual presentation of HTML elements.</p>
+                        <p>CSS (Cascading Style Sheets) is used to style and layout web pages.</p>
                         
-                        <h4>Selectors:</h4>
+                        <h4>Ways to Add CSS:</h4>
                         <ul>
-                            <li>Element selectors (p, div, h1)</li>
-                            <li>Class selectors (.classname)</li>
-                            <li>ID selectors (#idname)</li>
-                            <li>Attribute selectors [type="text"]</li>
-                            <li>Combinators (space, >, +, ~)</li>
+                            <li>External stylesheet</li>
+                            <li>Internal stylesheet</li>
+                            <li>Inline styles</li>
                         </ul>
 
-                        <h4>CSS Rules:</h4>
+                        <h4>Basic Syntax:</h4>
                         <ul>
-                            <li>Declarations (property: value)</li>
-                            <li>Cascading and specificity</li>
-                            <li>Inheritance</li>
-                            <li>Important declaration (!important)</li>
+                            <li>Selectors</li>
+                            <li>Properties</li>
+                            <li>Values</li>
+                            <li>Declarations</li>
                         </ul>
                     </div>
                     
                     <div class="exercise">
-                        <h4>Exercise: Style a Blog Post</h4>
-                        <p>Create styles for a blog post using different types of selectors.</p>
+                        <h4>Exercise: Style Your First Page</h4>
+                        <p>Add basic styling to an HTML page.</p>
                         <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
                         <div class="correction">
                             <div class="code-example">
                                 <pre><code>
-/* Element Selectors */
-article {
-    max-width: 800px;
-    margin: 0 auto;
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
     padding: 20px;
 }
 
 h1 {
     color: #2c3e50;
-    font-family: 'Georgia', serif;
-}
-
-/* Class Selectors */
-.post-meta {
-    color: #7f8c8d;
-    font-size: 0.9em;
-}
-
-/* ID Selector */
-#main-title {
-    font-size: 2.5em;
     text-align: center;
 }
 
-/* Attribute Selector */
-a[target="_blank"] {
-    color: #e74c3c;
-    text-decoration: none;
-}
-
-/* Combinator */
-article > p {
-    line-height: 1.6;
-    margin-bottom: 1.5em;
+p {
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
 }
                                 </code></pre>
                             </div>
@@ -101,71 +98,51 @@ article > p {
                 </div>
             </div>
 
-            <!-- Box Model and Layout -->
+            <!-- Selectors and Box Model -->
             <div class="lesson-item">
-                <h3>2. Box Model and Layout <button onclick="toggleLesson(this)">Show</button></h3>
+                <h3>2. Selectors and Box Model <button onclick="toggleLesson(this)">Show</button></h3>
                 <div class="lesson-content">
                     <div class="theory">
-                        <h4>Box Model Components:</h4>
+                        <h4>CSS Selectors:</h4>
                         <ul>
-                            <li>Content - width and height</li>
-                            <li>Padding - inner spacing</li>
-                            <li>Border - element boundary</li>
-                            <li>Margin - outer spacing</li>
-                            <li>Box-sizing property</li>
+                            <li>Element selectors</li>
+                            <li>Class and ID selectors</li>
+                            <li>Attribute selectors</li>
+                            <li>Pseudo-classes and elements</li>
                         </ul>
 
-                        <h4>Layout Properties:</h4>
+                        <h4>Box Model:</h4>
                         <ul>
-                            <li>Display (block, inline, inline-block)</li>
-                            <li>Position (static, relative, absolute, fixed)</li>
-                            <li>Float and clear</li>
-                            <li>Z-index and stacking context</li>
+                            <li>Content</li>
+                            <li>Padding</li>
+                            <li>Border</li>
+                            <li>Margin</li>
                         </ul>
                     </div>
                     
                     <div class="exercise">
-                        <h4>Exercise: Create a Card Layout</h4>
-                        <p>Design a product card with proper spacing and positioning.</p>
+                        <h4>Exercise: Create a Card Component</h4>
                         <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
                         <div class="correction">
                             <div class="code-example">
                                 <pre><code>
-.product-card {
-    /* Box Model */
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    margin: 15px;
-    box-sizing: border-box;
-
-    /* Layout */
-    position: relative;
-    display: inline-block;
+.card {
     background: white;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
 }
 
-.product-image {
+.card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
     border-radius: 4px;
-}
-
-.price-tag {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #e74c3c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.product-info {
-    margin-top: 15px;
 }
                                 </code></pre>
                             </div>
@@ -174,75 +151,51 @@ article > p {
                 </div>
             </div>
 
-            <!-- Flexbox and Grid -->
+            <!-- Layout and Positioning -->
             <div class="lesson-item">
-                <h3>3. Flexbox and Grid <button onclick="toggleLesson(this)">Show</button></h3>
+                <h3>3. Layout and Positioning <button onclick="toggleLesson(this)">Show</button></h3>
                 <div class="lesson-content">
                     <div class="theory">
-                        <h4>Flexbox Properties:</h4>
+                        <h4>Display Properties:</h4>
                         <ul>
-                            <li>Container properties (display: flex, flex-direction, justify-content, align-items)</li>
-                            <li>Item properties (flex-grow, flex-shrink, flex-basis)</li>
-                            <li>Order and alignment</li>
-                            <li>Flex wrapping</li>
+                            <li>Block vs Inline</li>
+                            <li>Flexbox</li>
+                            <li>Grid</li>
+                            <li>Position properties</li>
                         </ul>
 
-                        <h4>Grid Properties:</h4>
+                        <h4>Responsive Design:</h4>
                         <ul>
-                            <li>Grid container (display: grid, grid-template-columns/rows)</li>
-                            <li>Grid areas and template areas</li>
-                            <li>Gap and alignment</li>
-                            <li>Auto-fit and minmax</li>
+                            <li>Media queries</li>
+                            <li>Flexible grids</li>
+                            <li>Responsive units</li>
+                            <li>Mobile-first approach</li>
                         </ul>
                     </div>
                     
                     <div class="exercise">
                         <h4>Exercise: Create a Responsive Layout</h4>
-                        <p>Build a responsive page layout using both Flexbox and Grid.</p>
                         <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
                         <div class="correction">
                             <div class="code-example">
                                 <pre><code>
-.page-container {
+.container {
     display: grid;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
+.sidebar {
+    background: #f8f9fa;
+    padding: 20px;
+}
+
 @media (max-width: 768px) {
-    .page-container {
-        grid-template-areas:
-            "header"
-            "main"
-            "sidebar"
-            "footer";
+    .container {
         grid-template-columns: 1fr;
     }
 }
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
                                 </code></pre>
                             </div>
                         </div>
@@ -250,173 +203,101 @@ article > p {
                 </div>
             </div>
 
-            <!-- Responsive Design -->
+            <!-- Colors and Typography -->
             <div class="lesson-item">
-                <h3>4. Responsive Design <button onclick="toggleLesson(this)">Show</button></h3>
+                <h3>4. Colors and Typography <button onclick="toggleLesson(this)">Show</button></h3>
                 <div class="lesson-content">
                     <div class="theory">
-                        <h4>Responsive Concepts:</h4>
+                        <h4>Colors:</h4>
                         <ul>
-                            <li>Media queries</li>
-                            <li>Viewport meta tag</li>
-                            <li>Relative units (em, rem, vh, vw)</li>
-                            <li>Mobile-first approach</li>
+                            <li>Color values (HEX, RGB, HSL)</li>
+                            <li>Background properties</li>
+                            <li>Gradients</li>
+                            <li>Opacity and transparency</li>
                         </ul>
 
-                        <h4>Responsive Techniques:</h4>
+                        <h4>Typography:</h4>
                         <ul>
-                            <li>Fluid layouts</li>
-                            <li>Flexible images</li>
-                            <li>Breakpoints</li>
-                            <li>Container queries</li>
+                            <li>Font properties</li>
+                            <li>Text formatting</li>
+                            <li>Web fonts</li>
+                            <li>Typography best practices</li>
                         </ul>
                     </div>
                     
                     <div class="exercise">
-                        <h4>Exercise: Create a Responsive Navigation</h4>
-                        <p>Build a navigation menu that adapts to different screen sizes.</p>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
-/* Base styles */
-.nav-container {
-    padding: 1rem;
-    background: #2c3e50;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-toggle {
-    display: none;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2c3e50;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-link {
-        padding: 0.5rem 0;
-        text-align: center;
-    }
-}
-                                </code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Advanced CSS -->
-            <div class="lesson-item">
-                <h3>5. Advanced CSS <button onclick="toggleLesson(this)">Show</button></h3>
-                <div class="lesson-content">
-                    <div class="theory">
-                        <h4>Animations and Transitions:</h4>
-                        <ul>
-                            <li>Transitions properties</li>
-                            <li>Keyframe animations</li>
-                            <li>Transform properties</li>
-                            <li>Animation timing functions</li>
-                        </ul>
-
-                        <h4>Modern CSS Features:</h4>
-                        <ul>
-                            <li>Custom properties (variables)</li>
-                            <li>Pseudo-elements and pseudo-classes</li>
-                            <li>CSS functions (calc, clamp)</li>
-                            <li>CSS custom properties</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Create Animated Components</h4>
-                        <p>Build interactive components with animations and transitions.</p>
+                        <h4>Exercise: Style Text Content</h4>
                         <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
                         <div class="correction">
                             <div class="code-example">
                                 <pre><code>
 :root {
-    --primary-color: #3498db;
-    --hover-color: #2980b9;
-    --transition-speed: 0.3s;
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
 }
 
-.button {
-    padding: 10px 20px;
-    background: var(--primary-color);
+.title {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    font-size: clamp(2rem, 5vw, 4rem);
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transforms and Animations -->
+            <div class="lesson-item">
+                <h3>5. Transforms and Animations <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="theory">
+                        <h4>Transforms:</h4>
+                        <ul>
+                            <li>2D transforms</li>
+                            <li>3D transforms</li>
+                            <li>Transform origin</li>
+                            <li>Multiple transforms</li>
+                        </ul>
+
+                        <h4>Animations:</h4>
+                        <ul>
+                            <li>Transitions</li>
+                            <li>Keyframes</li>
+                            <li>Animation properties</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="exercise">
+                        <h4>Exercise: Create Animated Button</h4>
+                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
+                        <div class="correction">
+                            <div class="code-example">
+                                <pre><code>
+.animated-button {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
     color: white;
     border: none;
-    border-radius: 4px;
-    transition: all var(--transition-speed) ease;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.button:hover {
-    background: var(--hover-color);
+.animated-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.card {
-    animation: slideIn 0.5s ease-out;
-}
-
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
                                 </code></pre>
                             </div>
