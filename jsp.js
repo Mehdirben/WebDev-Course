@@ -31,3 +31,25 @@ function toggleCorrection(button) {
     button.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
     button.style.background = isHidden ? '#27ae60' : '#2ecc71';
 }
+
+function toggleFullscreen() {
+    const pdfViewer = document.getElementById('pdfViewer');
+    
+    if (!document.fullscreenElement) {
+        if (pdfViewer.requestFullscreen) {
+            pdfViewer.requestFullscreen();
+        } else if (pdfViewer.webkitRequestFullscreen) {
+            pdfViewer.webkitRequestFullscreen();
+        } else if (pdfViewer.msRequestFullscreen) {
+            pdfViewer.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}

@@ -26,6 +26,22 @@
 
     <main class="course-content">
         <section class="lesson-container">
+            <!-- Course PDF -->
+            <div class="lesson-item">
+                <h3>Full Course PDF <button onclick="toggleLesson(this)">Show</button></h3>
+                <div class="lesson-content">
+                    <div class="pdf-section">
+                        <div class="pdf-container">
+                            <iframe src="html_course.pdf" class="pdf-viewer" id="pdfViewer"></iframe>
+                            <div class="pdf-controls">
+                                <button onclick="toggleFullscreen()" class="fullscreen-btn">Full Screen</button>
+                                <a href="html_course.pdf" download class="download-btn">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- HTML Fundamentals -->
             <div class="lesson-item">
                 <h3>1. HTML Fundamentals <button onclick="toggleLesson(this)">Show</button></h3>
@@ -296,7 +312,7 @@
         &lt;/section&gt;
         
         &lt;footer&gt;
-            &lt;p&gt;Author: Jane Doe&lt;/p&gt;
+            &lt;p&gt;Author: Jane Doe&lt;/footer&gt;
         &lt;/footer&gt;
     &lt;/article&gt;
     
