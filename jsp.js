@@ -32,6 +32,18 @@ function toggleCorrection(button) {
     button.style.background = isHidden ? '#27ae60' : '#2ecc71';
 }
 
+function toggleSolution(button, solutionId) {
+    const solution = document.getElementById(solutionId);
+    const isHidden = !solution.classList.contains('show');
+    
+    // Toggle solution visibility
+    solution.classList.toggle('show');
+    
+    // Update button text and style
+    button.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+    button.style.background = isHidden ? '#2980b9' : '#3498db';
+}
+
 function toggleFullscreen() {
     const pdfViewer = document.getElementById('pdfViewer');
     
