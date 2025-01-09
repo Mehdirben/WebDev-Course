@@ -42,264 +42,467 @@
                 </div>
             </div>
 
-            <!-- CSS Fundamentals -->
+            <!-- TP Exercises -->
             <div class="lesson-item">
-                <h3>1. CSS Fundamentals <button onclick="toggleLesson(this)">Show</button></h3>
+                <h3>Exercises<button onclick="toggleLesson(this)">Show</button></h3>
                 <div class="lesson-content">
-                    <div class="theory">
-                        <h4>Introduction to CSS</h4>
-                        <p>CSS (Cascading Style Sheets) is used to style and layout web pages.</p>
+                    <!-- TP 3 -->
+                    <div class="tp-section">
+                        <h4>TP 3: CSS</h4>
                         
-                        <h4>Ways to Add CSS:</h4>
-                        <ul>
-                            <li>External stylesheet</li>
-                            <li>Internal stylesheet</li>
-                            <li>Inline styles</li>
-                        </ul>
-
-                        <h4>Basic Syntax:</h4>
-                        <ul>
-                            <li>Selectors</li>
-                            <li>Properties</li>
-                            <li>Values</li>
-                            <li>Declarations</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Style Your First Page</h4>
-                        <p>Add basic styling to an HTML page.</p>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
+                        <!-- Exercise 1 -->
+                        <div class="exercise-block">
+                            <h5>Exercice 1: Feuille de style pour le formulaire d'inscription</h5>
+                            <div class="exercise-description">
+                                <div class="requirements">
+                                    <h6>Requirements:</h6>
+                                    <ol>
+                                        <li>Mettre le contenu du <code>&lt;body&gt;</code> dans une <code>&lt;div class="container"&gt;</code></li>
+                                        <li>Mettre le contenu de chaque <code>&lt;fieldset&gt;</code> dans une <code>&lt;div&gt;</code></li>
+                                        <li>Mettre chaque <code>&lt;label&gt;</code> avec son <code>&lt;input&gt;</code> dans une <code>&lt;div&gt;</code>, donner une marge extérieure de 10px entre chaque division</li>
+                                        <li>Centrer le contenu principal (Formulaire d'inscription)</li>
+                                        <li>Donner un effet d'ombre au passage et au clic sur chaque <code>&lt;input&gt;</code></li>
+                                        <li>Modifier le style de police, la taille</li>
+                                        <li>Définir une taille à tous les <code>&lt;input&gt;</code> pour occuper 100% de la largeur disponible de chaque ligne</li>
+                                        <li>Modifier les styles des <code>&lt;button&gt;</code></li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="solution-section">
+                                <button class="toggle-btn solution-toggle" onclick="toggleSolution(this, 'solution1')">Show Solution</button>
+                                <div class="solution" id="solution1">
+                                    <div class="code-example">
+                                        <h6>HTML:</h6>
+                                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Registration Form&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;form&gt;
+            &lt;div class="fieldset-container"&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Personal Information&lt;/legend&gt;
+                    &lt;div class="input-group"&gt;
+                        &lt;label for="name"&gt;Name:&lt;/label&gt;
+                        &lt;input type="text" id="name" name="name" required&gt;
+                    &lt;/div&gt;
+                    &lt;div class="input-group"&gt;
+                        &lt;label for="email"&gt;Email:&lt;/label&gt;
+                        &lt;input type="email" id="email" name="email" required&gt;
+                    &lt;/div&gt;
+                &lt;/fieldset&gt;
+            &lt;/div&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                        <h6>CSS:</h6>
+                                        <pre><code>
 /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.fieldset-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-group {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+input:hover, input:focus {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+button {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+                                        </code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 2 -->
+                        <div class="exercise-block">
+                            <h5>Exercice 2: Portfolio photographique</h5>
+                            <div class="exercise-description">
+                                <div class="requirements">
+                                    <h6>HTML Requirements:</h6>
+                                    <ul>
+                                        <li>Fichier HTML nommé <code>portfolio.html</code></li>
+                                        <li>Titre approprié dans <code>&lt;title&gt;</code> et feuille de style CSS nommée <code>stylePortfolioPhotographe.css</code></li>
+                                        <li>En-tête avec titre principal dans <code>&lt;header&gt;</code>: Portfolio de Marie Dupont</li>
+                                        <li>Menu de navigation dans <code>&lt;nav&gt;</code> avec <code>&lt;ul&gt;</code> et <code>&lt;li&gt;</code> pour les liens</li>
+                                        <li>Section Galerie dans <code>&lt;section class="gallery"&gt;</code> avec grille d'images <code>&lt;img&gt;</code></li>
+                                        <li>Section À propos dans <code>&lt;aside&gt;</code></li>
+                                        <li>Pied de page dans <code>&lt;footer&gt;</code></li>
+                                    </ul>
+                                    <h6>CSS Requirements:</h6>
+                                    <ul>
+                                        <li>Marge interne de 40px à gauche et à droite de la page</li>
+                                        <li>Titre principal en Arial, 40px, gras, bleu</li>
+                                        <li>Navigation en boutons alignés horizontalement</li>
+                                        <li>Galerie d'images en grille</li>
+                                        <li>Section À propos flottante à gauche (20%)</li>
+                                        <li>Division principale width: 70%</li>
+                                        <li>Pied de page avec fond coloré et bordure</li>
+                                        <li>Paragraphes indentés et justifiés</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="solution-section">
+                                <button class="toggle-btn solution-toggle" onclick="toggleSolution(this, 'solution2')">Show Solution</button>
+                                <div class="solution" id="solution2">
+                                    <div class="code-example">
+                                        <h6>HTML:</h6>
+                                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Portfolio de Marie Dupont&lt;/title&gt;
+    &lt;link rel="stylesheet" href="stylePortfolioPhotographe.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Portfolio de Marie Dupont&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Galerie&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;aside&gt;
+            &lt;h2&gt;À propos&lt;/h2&gt;
+            &lt;p&gt;Photographe professionnelle...&lt;/p&gt;
+        &lt;/aside&gt;
+        
+        &lt;section class="gallery"&gt;
+            &lt;h2&gt;Galerie&lt;/h2&gt;
+            &lt;div class="gallery-grid"&gt;
+                &lt;img src="photo1.jpg" alt="Photo 1"&gt;
+                &lt;img src="photo2.jpg" alt="Photo 2"&gt;
+                &lt;img src="photo3.jpg" alt="Photo 3"&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Contact: info@mariedupont.com&lt;/p&gt;
+        &lt;div class="social-links"&gt;
+            &lt;a href="#"&gt;Instagram&lt;/a&gt;
+            &lt;a href="#"&gt;Facebook&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                        <h6>CSS:</h6>
+                                        <pre><code>
+/* stylePortfolioPhotographe.css */
+body {
+    padding: 0 40px;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
-    color: #2c3e50;
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
     text-align: center;
 }
 
-p {
-    color: #333;
-    max-width: 600px;
-    margin: 0 auto;
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
 }
-                                </code></pre>
+
+nav a {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background: #ddd;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+main {
+    width: 70%;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+footer {
+    background: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+p {
+    text-indent: 2em;
+    text-align: justify;
+}
+                                        </code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Selectors and Box Model -->
-            <div class="lesson-item">
-                <h3>2. Selectors and Box Model <button onclick="toggleLesson(this)">Show</button></h3>
-                <div class="lesson-content">
-                    <div class="theory">
-                        <h4>CSS Selectors:</h4>
-                        <ul>
-                            <li>Element selectors</li>
-                            <li>Class and ID selectors</li>
-                            <li>Attribute selectors</li>
-                            <li>Pseudo-classes and elements</li>
-                        </ul>
-
-                        <h4>Box Model:</h4>
-                        <ul>
-                            <li>Content</li>
-                            <li>Padding</li>
-                            <li>Border</li>
-                            <li>Margin</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Create a Card Component</h4>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
+                        <!-- Exercise 3 -->
+                        <div class="exercise-block">
+                            <h5>Exercice 3: Carte (card) pour un article</h5>
+                            <div class="exercise-description">
+                                <div class="requirements">
+                                    <h6>Requirements:</h6>
+                                    <ol>
+                                        <li>Créer une carte article avec <code>&lt;article class="card"&gt;</code></li>
+                                        <li>Ajouter une image <code>&lt;img&gt;</code> avec propriété filter</li>
+                                        <li>Créer une section contenu avec <code>&lt;div class="card-content"&gt;</code></li>
+                                        <li>Ajouter un titre <code>&lt;h2&gt;</code> et un paragraphe <code>&lt;p&gt;</code></li>
+                                        <li>Inclure un lien <code>&lt;a&gt;</code> "Read More" avec transition</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="solution-section">
+                                <button class="toggle-btn solution-toggle" onclick="toggleSolution(this, 'solution3')">Show Solution</button>
+                                <div class="solution" id="solution3">
+                                    <div class="code-example">
+                                        <h6>HTML:</h6>
+                                        <pre><code>
+&lt;article class="card"&gt;
+    &lt;img src="article-image.jpg" alt="Article Image"&gt;
+    &lt;div class="card-content"&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Article description goes here...&lt;/p&gt;
+        &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+                                        <h6>CSS:</h6>
+                                        <pre><code>
 .card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin: 20px;
-    width: 300px;
+    position: relative;
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.card h2 {
-    margin-top: 0;
-    color: #2c3e50;
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
     width: 100%;
-    border-radius: 4px;
+    height: 200px;
+    object-fit: cover;
+    transition: filter 0.3s;
 }
-                                </code></pre>
+
+.card:hover img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.card-content {
+    padding: 20px;
+    background: white;
+}
+                                        </code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Layout and Positioning -->
-            <div class="lesson-item">
-                <h3>3. Layout and Positioning <button onclick="toggleLesson(this)">Show</button></h3>
-                <div class="lesson-content">
-                    <div class="theory">
-                        <h4>Display Properties:</h4>
-                        <ul>
-                            <li>Block vs Inline</li>
-                            <li>Flexbox</li>
-                            <li>Grid</li>
-                            <li>Position properties</li>
-                        </ul>
+                        <!-- Exercise 4 -->
+                        <div class="exercise-block">
+                            <h5>Exercice 4: Feuille de style pour la page de l'exercice 1 du TP 1</h5>
+                            <div class="exercise-description">
+                                <div class="requirements">
+                                    <h6>HTML Structure:</h6>
+                                    <ul>
+                                        <li>Division <code>&lt;div id="text"&gt;</code> contenant <code>&lt;aside&gt;</code> et <code>&lt;article&gt;</code></li>
+                                        <li>Division <code>&lt;div id="contenu"&gt;</code> contenant la division text et <code>&lt;iframe&gt;</code></li>
+                                        <li>Titre principal avec <code>&lt;h1&gt;</code></li>
+                                        <li>Navigation avec <code>&lt;nav&gt;</code> et <code>&lt;ul&gt;</code></li>
+                                        <li>Pied de page avec <code>&lt;footer&gt;</code></li>
+                                    </ul>
+                                    <h6>General Requirements:</h6>
+                                    <ol>
+                                        <li>Marge interne de la page de 40px à gauche et à droite avec une couleur de fond</li>
+                                        <li>Titre de la page en gras, bleu, au milieu, police Arial de 40px</li>
+                                        <li>Liste non ordonnée comme des boutons alignés horizontalement</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="solution-section">
+                                <button class="toggle-btn solution-toggle" onclick="toggleSolution(this, 'solution4')">Show Solution</button>
+                                <div class="solution" id="solution4">
+                                    <div class="code-example">
+                                        <h6>HTML:</h6>
+                                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Technologies Web&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Technologies of Web&lt;/h1&gt;
+    
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;CSS3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
 
-                        <h4>Responsive Design:</h4>
-                        <ul>
-                            <li>Media queries</li>
-                            <li>Flexible grids</li>
-                            <li>Responsive units</li>
-                            <li>Mobile-first approach</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Create a Responsive Layout</h4>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    &lt;div id="contenu"&gt;
+        &lt;div id="text"&gt;
+            &lt;aside&gt;
+                &lt;h2&gt;Menu&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Item 1&lt;/li&gt;
+                    &lt;li&gt;Item 2&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/aside&gt;
+            &lt;article&gt;
+                &lt;h2&gt;Main Content&lt;/h2&gt;
+                &lt;p&gt;Article content goes here...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;iframe src="content.html"&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Footer content&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                                        <h6>CSS:</h6>
+                                        <pre><code>
+body {
+    padding: 0 40px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+    font-family: Arial;
+    font-size: 40px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
     gap: 20px;
-    padding: 20px;
 }
 
-.sidebar {
-    background: #f8f9fa;
-    padding: 20px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-}
-                                </code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Colors and Typography -->
-            <div class="lesson-item">
-                <h3>4. Colors and Typography <button onclick="toggleLesson(this)">Show</button></h3>
-                <div class="lesson-content">
-                    <div class="theory">
-                        <h4>Colors:</h4>
-                        <ul>
-                            <li>Color values (HEX, RGB, HSL)</li>
-                            <li>Background properties</li>
-                            <li>Gradients</li>
-                            <li>Opacity and transparency</li>
-                        </ul>
-
-                        <h4>Typography:</h4>
-                        <ul>
-                            <li>Font properties</li>
-                            <li>Text formatting</li>
-                            <li>Web fonts</li>
-                            <li>Typography best practices</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Style Text Content</h4>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
-:root {
-    --primary-color: #2c3e50;
-    --accent-color: #3498db;
-}
-
-.title {
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
-    font-size: clamp(2rem, 5vw, 4rem);
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    color: transparent;
-}
-                                </code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Transforms and Animations -->
-            <div class="lesson-item">
-                <h3>5. Transforms and Animations <button onclick="toggleLesson(this)">Show</button></h3>
-                <div class="lesson-content">
-                    <div class="theory">
-                        <h4>Transforms:</h4>
-                        <ul>
-                            <li>2D transforms</li>
-                            <li>3D transforms</li>
-                            <li>Transform origin</li>
-                            <li>Multiple transforms</li>
-                        </ul>
-
-                        <h4>Animations:</h4>
-                        <ul>
-                            <li>Transitions</li>
-                            <li>Keyframes</li>
-                            <li>Animation properties</li>
-                            <li>Performance optimization</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="exercise">
-                        <h4>Exercise: Create Animated Button</h4>
-                        <button class="toggle-btn correction-toggle" onclick="toggleCorrection(this)">Show Solution</button>
-                        <div class="correction">
-                            <div class="code-example">
-                                <pre><code>
-.animated-button {
-    padding: 12px 24px;
-    background: linear-gradient(45deg, #2c3e50, #3498db);
-    color: white;
-    border: none;
+nav a {
+    padding: 10px 20px;
+    background: #eee;
     border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s;
 }
 
-.animated-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+#text {
+    width: 70%;
+    display: inline-block;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+#contenu {
+    display: flex;
+    gap: 2%;
 }
-                                </code></pre>
+
+aside {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+iframe {
+    width: 28%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+footer {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+p {
+    text-indent: 2em;
+    text-align: justify;
+}
+                                        </code></pre>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
