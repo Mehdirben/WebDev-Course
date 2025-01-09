@@ -1,67 +1,30 @@
-// Prevent two-finger touchpad scrolling
-document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey) {
-        event.preventDefault();
-    }
-}, { passive: false });
-
-function showCategory(category) {
-    // Hide all lists
-    document.querySelectorAll('.lesson-list').forEach(list => {
-        list.classList.remove('active-list');
-    });
-    
-    // Show selected category
-    document.getElementById(`${category}-list`).classList.add('active-list');
-}
-
+// Toggle lesson content visibility
 function toggleLesson(button) {
-    const lessonContent = button.parentElement.nextElementSibling;
-    const isHidden = lessonContent.style.display === 'none' || lessonContent.style.display === '';
-    
-    lessonContent.style.display = isHidden ? 'block' : 'none';
-    button.textContent = isHidden ? 'Hide' : 'Show';
+    const content = button.closest('.lesson-item').querySelector('.lesson-content');
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+        button.textContent = 'Show';
+    } else {
+        content.style.display = 'block';
+        button.textContent = 'Hide';
+    }
 }
 
-function toggleCorrection(button) {
-    const correction = button.nextElementSibling;
-    const isHidden = !correction.classList.contains('show');
-    
-    correction.classList.toggle('show');
-    button.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
-    button.style.background = isHidden ? '#27ae60' : '#2ecc71';
-}
-
+// Toggle solution visibility
 function toggleSolution(button, solutionId) {
     const solution = document.getElementById(solutionId);
-    const isHidden = !solution.classList.contains('show');
-    
-    // Toggle solution visibility
     solution.classList.toggle('show');
-    
-    // Update button text and style
-    button.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
-    button.style.background = isHidden ? '#2980b9' : '#3498db';
+    button.textContent = solution.classList.contains('show') ? 'Hide Solution' : 'Show Solution';
 }
 
+// PDF viewer fullscreen toggle
 function toggleFullscreen() {
     const pdfViewer = document.getElementById('pdfViewer');
-    
     if (!document.fullscreenElement) {
-        if (pdfViewer.requestFullscreen) {
-            pdfViewer.requestFullscreen();
-        } else if (pdfViewer.webkitRequestFullscreen) {
-            pdfViewer.webkitRequestFullscreen();
-        } else if (pdfViewer.msRequestFullscreen) {
-            pdfViewer.msRequestFullscreen();
-        }
+        pdfViewer.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
+        document.exitFullscreen();
     }
 }
