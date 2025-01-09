@@ -265,7 +265,7 @@ body {
 
 /* PDF Viewer Styles */
 .pdf-section {
-    margin-bottom: 0;  /* Remove bottom margin since it's now inside lesson-content */
+    margin-bottom: 0;
 }
 
 .pdf-container {
@@ -307,6 +307,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: inherit;
 }
 
 .fullscreen-btn:hover {
